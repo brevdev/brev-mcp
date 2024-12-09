@@ -1,36 +1,24 @@
-# brev_mcp MCP server
+# Brev MCP server
 
-A MCP server project
-
-## Components
-
-### Resources
-
-The server implements a simple note storage system with:
-- Custom note:// URI scheme for accessing individual notes
-- Each note resource has a name, description and text/plain mimetype
-
-### Prompts
-
-The server provides a single prompt:
-- summarize-notes: Creates summaries of all stored notes
-  - Optional "style" argument to control detail level (brief/detailed)
-  - Generates prompt combining all current notes with style preference
-
-### Tools
-
-The server implements one tool:
-- add-note: Adds a new note to the server
-  - Takes "name" and "content" as required string arguments
-  - Updates server state and notifies clients of resource changes
+This is a MCP server implementation for Brev.
 
 ## Configuration
 
-[TODO: Add configuration details specific to your implementation]
+The MCP server uses the Brev CLI's API access token and currently set org. 
+
+Follow the [Brev documentation](https://www.brev.dev/docs/reference/brev-cli) to download the CLI and login if you haven't already.
+
+If you want to switch your Brev org, run `brev set <org-name>`
+
+The CLI access token expires every hour. If you have any 403 errors, simply run `brev ls` to refresh the access token.
 
 ## Quickstart
 
 ### Install
+
+### Setup repository locally
+
+`git clone git@github.com:brevdev/brev-mcp.git`
 
 #### Claude Desktop
 
@@ -39,7 +27,8 @@ On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
 <details>
   <summary>Development/Unpublished Servers Configuration</summary>
-  ```
+
+  ```json
   "mcpServers": {
     "brev_mcp": {
       "command": "uv",
@@ -56,7 +45,8 @@ On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
 <details>
   <summary>Published Servers Configuration</summary>
-  ```
+
+  ```json
   "mcpServers": {
     "brev_mcp": {
       "command": "uvx",

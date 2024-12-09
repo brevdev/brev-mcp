@@ -14,16 +14,20 @@ The CLI access token expires every hour. If you have any 403 errors, simply run 
 
 ## Quickstart
 
-### Install
-
 ### Setup repository locally
 
 `git clone git@github.com:brevdev/brev-mcp.git`
+
+### Install uv
+
+Follow the [uv installation guide](https://docs.astral.sh/uv/getting-started/installation/)
 
 #### Claude Desktop
 
 On MacOS: `~/Library/Application\ Support/Claude/claude_desktop_config.json`
 On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
+
+Add the following to your `claude_desktop_config.json`:
 
 <details>
   <summary>Development/Unpublished Servers Configuration</summary>
@@ -34,24 +38,9 @@ On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
       "command": "uv",
       "args": [
         "--directory",
-        "/Users/tmontfort/Brev/repos/brev_mcp",
+        "<path-to-repo>",
         "run",
-        "brev_mcp"
-      ]
-    }
-  }
-  ```
-</details>
-
-<details>
-  <summary>Published Servers Configuration</summary>
-
-  ```json
-  "mcpServers": {
-    "brev_mcp": {
-      "command": "uvx",
-      "args": [
-        "brev_mcp"
+        "brev-mcp"
       ]
     }
   }

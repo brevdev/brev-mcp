@@ -20,7 +20,7 @@ The CLI access token expires every hour. If you have any 403 errors, simply run 
 
 ### Install uv
 
-Follow the [uv installation guide](https://docs.astral.sh/uv/getting-started/installation/)
+Follow the [uv installation guide]
 
 #### Claude Desktop
 
